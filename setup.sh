@@ -22,3 +22,6 @@ nix-channel --update
 
 echo "Step 4: Running nixos-rebuild switch"
 nixos-rebuild switch
+
+echo "Step 5: Installing LazyVim"
+sudo -u "$USER_NAME" bash -c "git clone https://github.com/LazyVim/starter \"$NVIM_CONFIG_DIR\" && rm -rf \"$NVIM_CONFIG_DIR/.git\""
