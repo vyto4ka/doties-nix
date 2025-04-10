@@ -14,7 +14,6 @@
     lua
     tree
     gcc
-    clang
     zig
   ];
 
