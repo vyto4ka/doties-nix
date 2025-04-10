@@ -22,3 +22,10 @@ nixos-rebuild switch
 echo "Step 5: Installing LazyVim config"
 sudo -u vyto4ka git clone https://github.com/LazyVim/starter /home/vyto4ka/.config/nvim
 rm -rf /home/vyto4ka/.config/nvim/.git
+
+echo "Step 6: Copying Kitty config files"
+mkdir -p /home/vyto4ka/.config/kitty
+cp -v ./kitty/current-theme.conf /home/vyto4ka/.config/kitty/
+cp -v ./kitty/kitty.conf /home/vyto4ka/.config/kitty/
+chown -R vyto4ka:vyto4ka /home/vyto4ka/.config/kitty
+>>>>>>> 670e5b4 (add kitty)
