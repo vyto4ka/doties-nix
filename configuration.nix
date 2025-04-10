@@ -54,11 +54,10 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us,ru";
-    variant = ",";
-    options = "grp:alt_shift_toggle";
+  layout = "us,ru";
+  variant = ",";
+  options = "grp:alt_shift_toggle";
   };
-
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -86,7 +85,7 @@
   users.users.vyto4ka = {
     isNormalUser = true;
     description = "vyto4ka";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
@@ -97,7 +96,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   home-manager.users.vyto4ka = import /home/vyto4ka/.config/home-manager/home.nix;
   programs.zsh.enable = true;
-  
+  virtualisation.docker.enable = true;  
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -109,8 +108,8 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-  nordic
-  ];
+  nordic 
+ ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

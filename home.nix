@@ -11,6 +11,11 @@
     git
     neovim
     kitty
+    lua
+    tree
+    gcc
+    clang
+    zig
   ];
 
   programs.git.enable = true;
@@ -20,7 +25,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "agnoster";
-      plugins = [ "git" "fzf" "colored-man-pages" ];
+      plugins = [ "git" "colored-man-pages" ];
     };
   };
 }
